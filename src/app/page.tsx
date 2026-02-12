@@ -1,5 +1,7 @@
 'use client';
 
+import Header from '@/components/Header';
+
 import { useState } from 'react';
 
 export default function Home() {
@@ -14,46 +16,7 @@ export default function Home() {
 
   return (
     <>
-      {/* Header - Fixed */}
-      <header className="fixed top-0 w-full bg-white/95 backdrop-blur z-50 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex justify-between items-center">
-            {/* Logo */}
-            <a href="/" className="text-2xl font-serif font-bold text-gray-900 flex-shrink-0">
-              Ideal House
-            </a>
-
-            {/* Navigation - Center */}
-            <nav className="hidden md:flex gap-8 items-center">
-              <a href="/" className="text-gray-700 hover:text-amber-600 font-medium transition">
-                Home
-              </a>
-              <a href="/products" className="text-gray-700 hover:text-amber-600 font-medium transition">
-                Products
-              </a>
-              <a href="/about" className="text-gray-700 hover:text-amber-600 font-medium transition">
-                About
-              </a>
-              <a href="/contact" className="text-gray-700 hover:text-amber-600 font-medium transition">
-                Contact
-              </a>
-            </nav>
-
-            {/* Cart Button - Right */}
-            <div className="flex items-center gap-4">
-              <a href="/cart" className="px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-lg hover:shadow-lg transition-all duration-300 flex-shrink-0">
-                🛒 Cart
-              </a>
-
-              {/* Mobile menu button */}
-              <button className="md:hidden text-gray-700 hover:text-amber-600 transition">
-                <span className="text-2xl">☰</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </header>
-
+       <Header />
       {/* Hero Section - Sofa Living Room */}
       <section className="relative h-screen bg-cover bg-center bg-no-repeat pt-20 flex items-center overflow-hidden" 
                style={{backgroundImage: 'url("https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1400&q=80")'}}>

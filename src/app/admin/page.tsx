@@ -14,7 +14,7 @@ export default function AdminPage() {
     return (
       <>
         <Header />
-        <div className="max-w-7xl mx-auto px-4 py-16">
+        <div className="max-w-7xl mx-auto px-4 py-16 pt-32">
           <div className="text-center">
             <h1 className="text-4xl font-serif font-bold mb-4 text-dark">Access Denied</h1>
             <p className="text-gray-600 mb-8">You must be an admin to access this page.</p>
@@ -32,11 +32,12 @@ export default function AdminPage() {
     <>
       <Header />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      {/* Main Page Wrapper: added bigger top/bottom padding */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Sidebar Navigation */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg shadow-md p-6">
+            <div className="bg-white rounded-lg shadow-md p-6 sticky top-24">
               <h2 className="text-xl font-bold mb-6 text-dark">Admin Menu</h2>
               <nav className="space-y-2">
                 <button
@@ -176,7 +177,7 @@ export default function AdminPage() {
                       </tr>
                     </thead>
                     <tbody>
-                      {[
+                      {[ 
                         { name: 'Modern Sofa', price: '$4,999', stock: 5 },
                         { name: 'Dining Table', price: '$2,999', stock: 3 },
                         { name: 'Office Chair', price: '$899', stock: 12 },
@@ -223,9 +224,7 @@ export default function AdminPage() {
                           <td className="px-6 py-3">{order.customer}</td>
                           <td className="px-6 py-3">{order.total}</td>
                           <td className="px-6 py-3">
-                            <span className="bg-gray-100 px-3 py-1 rounded text-sm">
-                              {order.status}
-                            </span>
+                            <span className="bg-gray-100 px-3 py-1 rounded text-sm">{order.status}</span>
                           </td>
                         </tr>
                       ))}

@@ -27,8 +27,8 @@ export default function ProductsPage() {
       <Header />
 
       {/* Header Section */}
-      <section className="bg-gradient-to-r from-dark to-gray-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-r from-dark to-gray-900 text-white pt-24 pb-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-5xl font-serif font-bold mb-3">Our Collections</h1>
           <p className="text-gray-300 text-lg">Discover our curated selection of premium furniture</p>
         </div>

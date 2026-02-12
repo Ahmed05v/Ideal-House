@@ -31,7 +31,7 @@ export default function ContactPage() {
     <>
       <Header />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
         <h1 className="text-5xl font-serif font-bold mb-4 text-center text-dark">
           Get in Touch
         </h1>
