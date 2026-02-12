@@ -19,7 +19,6 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-/* 🔐 Fake users (NO DATABASE) */
 const FAKE_USERS = [
   {
     id: '1',
