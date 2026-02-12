@@ -12,73 +12,70 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition duration-300">
-            <div className="w-20 h-20 relative flex-shrink-0">
+    <header className="fixed top-0 w-full bg-white/95 backdrop-blur z-50 border-b border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="flex justify-between items-center">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition">
+            <div className="w-8 h-8 relative flex-shrink-0">
               <Image
                 src="/ideal house.jpg"
                 alt="Ideal House Logo"
-                width={80}
-                height={80}
+                width={32}
+                height={32}
                 priority
                 className="w-full h-full object-contain"
               />
             </div>
-            <div className="hidden sm:flex flex-col">
-              <span className="text-2xl font-serif font-bold text-dark">
-                Ideal House
-              </span>
-            </div>
+            <span className="text-2xl font-serif font-bold text-gray-900">Ideal House</span>
           </Link>
 
-          {/* Navigation */}
-          <nav className="hidden md:flex space-x-12">
-            <Link href="/" className="text-gray-700 font-medium hover:text-primary transition duration-300">
+          {/* Navigation - centered */}
+          <nav className="hidden md:flex gap-8 items-center">
+            <Link href="/" className="text-gray-700 hover:text-amber-600 font-medium transition">
               Home
             </Link>
-            <Link href="/products" className="text-gray-700 font-medium hover:text-primary transition duration-300">
+            <Link href="/products" className="text-gray-700 hover:text-amber-600 font-medium transition">
               Products
             </Link>
-            <Link href="/about" className="text-gray-700 font-medium hover:text-primary transition duration-300">
+            <Link href="/about" className="text-gray-700 hover:text-amber-600 font-medium transition">
               About
             </Link>
-            <Link href="/contact" className="text-gray-700 font-medium hover:text-primary transition duration-300">
+            <Link href="/contact" className="text-gray-700 hover:text-amber-600 font-medium transition">
               Contact
             </Link>
           </nav>
 
-          {/* Right side icons */}
-          <div className="flex items-center space-x-6">
+          {/* Right side - User info and Cart */}
+          <div className="flex items-center gap-4">
             {user ? (
-              <div className="hidden sm:flex items-center space-x-4">
-                <span className="text-sm text-gray-700 font-medium">{user.name}</span>
+              <>
+                <span className="hidden sm:block text-sm text-gray-700 font-medium">{user.name}</span>
                 <button
                   onClick={logout}
-                  className="text-sm text-gray-700 hover:text-primary transition duration-300"
+                  className="hidden sm:block text-sm text-gray-700 hover:text-amber-600 transition font-medium"
                 >
                   Logout
                 </button>
                 {user.isAdmin && (
                   <Link
                     href="/admin"
-                    className="text-sm bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg hover:shadow-lg transition duration-300"
+                    className="hidden sm:block text-sm bg-gray-900 text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition font-medium"
                   >
                     Admin
                   </Link>
                 )}
-              </div>
+              </>
             ) : (
-              <Link href="/login" className="hidden sm:block text-sm text-gray-700 hover:text-primary transition duration-300 font-medium">
+              <Link href="/login" className="hidden sm:block text-sm text-gray-700 hover:text-amber-600 transition font-medium">
                 Login
               </Link>
             )}
 
-            <Link href="/cart" className="relative hover:scale-110 transition duration-300">
-              <div className="text-2xl">🛒</div>
+            <Link href="/cart" className="px-6 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 font-medium transition flex items-center gap-2">
+              🛒 Cart
               {items.length > 0 && (
-                <span className="absolute -top-3 -right-3 bg-gradient-to-r from-primary to-secondary text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center shadow-lg">
+                <span className="bg-white text-amber-600 text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
                   {items.length}
                 </span>
               )}
@@ -86,31 +83,46 @@ export default function Header() {
 
             {/* Mobile menu button */}
             <button
-              className="md:hidden text-gray-700 hover:text-primary transition"
+              className="md:hidden text-gray-700 hover:text-amber-600 transition"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              ☰
+              <span className="text-2xl">☰</span>
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <nav className="md:hidden pb-4 space-y-2">
-            <Link href="/" className="block text-gray-700 hover:text-primary transition py-2">
+          <nav className="md:hidden mt-4 pb-2 space-y-2 border-t border-gray-200 pt-4">
+            <Link href="/" className="block text-gray-700 hover:text-amber-600 transition py-2 font-medium">
               Home
             </Link>
-            <Link href="/products" className="block text-gray-700 hover:text-primary transition py-2">
+            <Link href="/products" className="block text-gray-700 hover:text-amber-600 transition py-2 font-medium">
               Products
             </Link>
-            <Link href="/about" className="block text-gray-700 hover:text-primary transition py-2">
+            <Link href="/about" className="block text-gray-700 hover:text-amber-600 transition py-2 font-medium">
               About
             </Link>
-            <Link href="/contact" className="block text-gray-700 hover:text-primary transition py-2">
+            <Link href="/contact" className="block text-gray-700 hover:text-amber-600 transition py-2 font-medium">
               Contact
             </Link>
-            {!user && (
-              <Link href="/login" className="block text-gray-700 hover:text-primary transition py-2">
+            {user ? (
+              <>
+                <div className="text-gray-700 py-2 font-medium border-t border-gray-200 mt-2 pt-2">{user.name}</div>
+                <button
+                  onClick={logout}
+                  className="block w-full text-left text-gray-700 hover:text-amber-600 transition py-2 font-medium"
+                >
+                  Logout
+                </button>
+                {user.isAdmin && (
+                  <Link href="/admin" className="block text-gray-700 hover:text-amber-600 transition py-2 font-medium">
+                    Admin
+                  </Link>
+                )}
+              </>
+            ) : (
+              <Link href="/login" className="block text-gray-700 hover:text-amber-600 transition py-2 font-medium border-t border-gray-200 mt-2 pt-2">
                 Login
               </Link>
             )}

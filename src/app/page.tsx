@@ -13,21 +13,44 @@ export default function Home() {
   };
 
   return (
-    <>      {/* Header */}
+    <>
+      {/* Header - Fixed */}
       <header className="fixed top-0 w-full bg-white/95 backdrop-blur z-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex justify-between items-center mb-4">
-            <a href="/" className="text-2xl font-serif font-bold text-gray-900">Ideal House</a>
-            <a href="/cart" className="px-6 py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 font-medium">
-              🛒 Cart
+          <div className="flex justify-between items-center">
+            {/* Logo */}
+            <a href="/" className="text-2xl font-serif font-bold text-gray-900 flex-shrink-0">
+              Ideal House
             </a>
+
+            {/* Navigation - Center */}
+            <nav className="hidden md:flex gap-8 items-center">
+              <a href="/" className="text-gray-700 hover:text-amber-600 font-medium transition">
+                Home
+              </a>
+              <a href="/products" className="text-gray-700 hover:text-amber-600 font-medium transition">
+                Products
+              </a>
+              <a href="/about" className="text-gray-700 hover:text-amber-600 font-medium transition">
+                About
+              </a>
+              <a href="/contact" className="text-gray-700 hover:text-amber-600 font-medium transition">
+                Contact
+              </a>
+            </nav>
+
+            {/* Cart Button - Right */}
+            <div className="flex items-center gap-4">
+              <a href="/cart" className="px-6 py-3 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-lg hover:shadow-lg transition-all duration-300 flex-shrink-0">
+                🛒 Cart
+              </a>
+
+              {/* Mobile menu button */}
+              <button className="md:hidden text-gray-700 hover:text-amber-600 transition">
+                <span className="text-2xl">☰</span>
+              </button>
+            </div>
           </div>
-          <nav className="flex gap-8 justify-center">
-            <a href="/products" className="text-gray-700 hover:text-amber-600 font-medium transition">Products</a>
-            <a href="/products" className="text-gray-700 hover:text-amber-600 font-medium transition">Collections</a>
-            <a href="/about" className="text-gray-700 hover:text-amber-600 font-medium transition">About</a>
-            <a href="/contact" className="text-gray-700 hover:text-amber-600 font-medium transition">Contact</a>
-          </nav>
         </div>
       </header>
 
@@ -43,7 +66,8 @@ export default function Home() {
             </h1>
             <p className="text-xl text-white/90 mb-4 leading-relaxed">
               Discover curated collections of premium furniture that transforms your house into a sanctuary of comfort and elegance.
-            </p>            <div className="flex flex-wrap gap-4 pt-4">
+            </p>
+            <div className="flex flex-wrap gap-4 pt-4">
               <a href="/products" className="px-8 py-4 bg-white text-gray-900 font-bold rounded-lg hover:bg-gray-100 transition-all inline-block">
                 Shop Now
               </a>
@@ -65,11 +89,13 @@ export default function Home() {
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
               Handpicked selections of premium furniture pieces
             </p>
-          </div>          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Collection Card 1 */}
             <a href="/products" className="group overflow-hidden rounded-2xl shadow-lg cursor-pointer">
               <div className="relative h-80 bg-cover bg-center overflow-hidden"
-                   style={{backgroundImage: 'url("https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80)'}}>
+                   style={{backgroundImage: 'url("https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80")'}}>
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition duration-300"></div>
                 <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
                   <h3 className="text-3xl font-serif font-bold mb-2">Sofas & Seating</h3>
@@ -81,7 +107,7 @@ export default function Home() {
             {/* Collection Card 2 */}
             <a href="/products" className="group overflow-hidden rounded-2xl shadow-lg cursor-pointer">
               <div className="relative h-80 bg-cover bg-center overflow-hidden"
-                   style={{backgroundImage: 'url("https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80)'}}>
+                   style={{backgroundImage: 'url("https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80")'}}>
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition duration-300"></div>
                 <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
                   <h3 className="text-3xl font-serif font-bold mb-2">Beds & Bedroom</h3>
@@ -93,7 +119,7 @@ export default function Home() {
             {/* Collection Card 3 */}
             <a href="/products" className="group overflow-hidden rounded-2xl shadow-lg cursor-pointer">
               <div className="relative h-80 bg-cover bg-center overflow-hidden"
-                   style={{backgroundImage: 'url("https://images.unsplash.com/photo-1592078615290-033ee584e267?w=600&q=80)'}}>
+                   style={{backgroundImage: 'url("https://images.unsplash.com/photo-1592078615290-033ee584e267?w=600&q=80")'}}>
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition duration-300"></div>
                 <div className="absolute inset-0 flex flex-col justify-end p-8 text-white">
                   <h3 className="text-3xl font-serif font-bold mb-2">Dining Sets</h3>
@@ -107,7 +133,7 @@ export default function Home() {
 
       {/* Why Choose Us - Dark Background with Image */}
       <section className="relative py-32 bg-cover bg-center"
-               style={{backgroundImage: 'url("https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1400&q=80)'}}>
+               style={{backgroundImage: 'url("https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1400&q=80")'}}>
         <div className="absolute inset-0 bg-black/50"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -148,7 +174,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-5xl font-serif font-bold text-center mb-20 text-gray-900">
             Shop by Category
-          </h2>          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               { name: 'Seating', desc: 'Sofas, chairs & ottomans', img: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80' },
               { name: 'Dining', desc: 'Tables & dining sets', img: 'https://images.unsplash.com/photo-1592078615290-033ee584e267?w=800&q=80' },
@@ -172,7 +200,7 @@ export default function Home() {
 
       {/* Testimonials */}
       <section className="relative py-32 bg-cover bg-center"
-               style={{backgroundImage: 'url("https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1400&q=80)'}}>
+               style={{backgroundImage: 'url("https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1400&q=80")'}}>
         <div className="absolute inset-0 bg-black/60"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -229,7 +257,8 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-950 text-white py-12">        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <footer className="bg-gray-950 text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div>
               <a href="/" className="font-serif font-bold text-lg mb-4 block">Ideal House</a>
