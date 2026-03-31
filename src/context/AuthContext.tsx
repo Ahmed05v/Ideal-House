@@ -39,7 +39,6 @@ const FAKE_USERS = [
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
 
-  // Persist login
   useEffect(() => {
     const stored = localStorage.getItem('auth_user');
     if (stored) {
